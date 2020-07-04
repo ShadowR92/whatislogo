@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box; /*уберем все стоковые падинги и маргины*/
+}
+
+a {
+    text-decoration: none;
+    display: inline-block; /*все наши ссылки строчно блочные*/
+}
+
+ul,
+li {
+    list-style: none; /*офф маркеры*/
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px; /*чтобы не было нижнего скрола*/
+    margin: 0 auto; /*центр*/
+    padding: 0 15px; /*чтобы к стенкам не прилепал 15*/
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+}
+
+.header {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header_top {
+    background-color: #303030; /*черный контейнер*/
+}
+
+.header_btn {
+    float: right; /*бесплатная консультация справа*/
+    line-height: 36px;
+    color: #1b1b1b;
+    background-color: #ffc222;
+    padding: 5px 20px 4px 50px;
+    font-size: 16px;
+    display: block;
+    position: relative;
+}
+
+.header_btn:before { /*иконка кейс*/
+    content: "\f0b1";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 22px;
+    color: #1b1b1b;
+}
+
+.header_contacts:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.header_phone,
+.header_email {
+    color: #cbcacb;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    position: relative;
+}
+
+.header_phone {
+    padding-left: 20px;
+    padding-right: 30px;
+}
+
+.header_phone:before { /*иконка трубка*/
+    content: "\f095";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
+
+.header_email {
+    padding-left: 24px;
+}
+
+.header_email:before { /*иконка маил*/
+    content: "\f003";
+    font-family: 'icomoon';
+    position: absolute;
+    left: 0;
+    color: #ffc222;
+}
+
+.header_content {
+    padding: 34px 0px 23px;
+}
+
+.header_content-inner {
+    display: flex;
+    justify-content: space-between; /*лого слева контакты справа*/
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a { /*наши ссылки*/
+    color: #323232;
+    line-height: 36px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    padding: 0px 16px; /*p0px16px*/
+    transition: all .3s; /*замедление*/
+}
+
+.menu a:hover {
+    border-color: #ffc222; /*рамка при наведении*/
+}
+
+.menu li + li { /*все отступят друг от друга по 10px*/
+    padding-left: 10px;
+}
+
+#modal {
+    display: none;
+}
+
+.slider {/*наша картинка слайдера стили*/
+    background-image: url(../img/slider-fon.jpg);/*наш фон слайдера*/
+    background-repeat: no-repeat;/*не повторяется*/
+    background-size: cover;/*растягивается*/
+    background-position: center;/*центр*/
+    min-height: 500px;/*миним высота, если увеличится, то картинка растянется*/
+}
+.slider_item-content {/*cлайдер*/
+    text-align: center;
+    padding-top: 110px;
+    max-width: 665px;
+    margin: 0 auto;
+}
+.slider_title {/*заголовок слайдера*/
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #fff;
+    line-height: 36px;
+    font-weight: 500;
+    letter-spacing: 1.5px;/*межбуквенное расстояние*/
+    margin-bottom: 22px;
+    font-family: 'Roboto', sans-serif;
+
+}
+.slider_text {/*текст слайдера*/
+    line-height: 24px;
+    font-size: 18px;
+    color: #d3d2d2;
+    margin-bottom: 50px;
+
+}
+
+.default-btn {/*дефолт кнопки*/
+    display: inline-block;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 30px 8px 24px;
+    border: 1px solid #ffc222;
+    border-right-width: 20px;
+    position: relative;
+    z-index: 2;
+}
+.default-btn:after {/*стрелочка*/
+    content: "\f105";
+    font-family: 'icomoon';
+    position: absolute;
+    top: 50%; /*центрируется вертикольно*/
+    transform: translateY(-50%);
+    right: -12px;
+}
+.slider_inner {
+    position: relative;
+}
+.slick-btn {/*слайдер стрелка*/
+    position: absolute;
+    top: 70%;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+
+}
+.slick_next {
+    right: 0;
+}
+.slick_prev {
+    left: 0;
+}
