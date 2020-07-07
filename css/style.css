@@ -127,32 +127,35 @@ body {
 #modal {
     display: none;
 }
-
-.slider {/*наша картинка слайдера стили*/
-    background-image: url(../img/slider-fon.jpg);/*наш фон слайдера*/
-    background-repeat: no-repeat;/*не повторяется*/
-    background-size: cover;/*растягивается*/
-    background-position: center;/*центр*/
-    min-height: 500px;/*миним высота, если увеличится, то картинка растянется*/
+/*=================СЛАЙДЕР*/
+.slider { /*наша картинка слайдера стили*/
+    background-image: url(../img/slider-fon.jpg); /*наш фон слайдера*/
+    background-repeat: no-repeat; /*не повторяется*/
+    background-size: cover; /*растягивается*/
+    background-position: center; /*центр*/
+    min-height: 500px; /*миним высота, если увеличится, то картинка растянется*/
 }
-.slider_item-content {/*cлайдер*/
+
+.slider_item-content { /*cлайдер*/
     text-align: center;
     padding-top: 110px;
     max-width: 665px;
     margin: 0 auto;
 }
-.slider_title {/*заголовок слайдера*/
+
+.slider_title { /*заголовок слайдера*/
     text-transform: uppercase;
     font-size: 30px;
     color: #fff;
     line-height: 36px;
     font-weight: 500;
-    letter-spacing: 1.5px;/*межбуквенное расстояние*/
+    letter-spacing: 1.5px; /*межбуквенное расстояние*/
     margin-bottom: 22px;
     font-family: 'Roboto', sans-serif;
 
 }
-.slider_text {/*текст слайдера*/
+
+.slider_text { /*текст слайдера*/
     line-height: 24px;
     font-size: 18px;
     color: #d3d2d2;
@@ -160,7 +163,7 @@ body {
 
 }
 
-.default-btn {/*дефолт кнопки*/
+.default-btn { /*дефолт кнопки*/
     display: inline-block;
     font-size: 14px;
     line-height: 24px;
@@ -172,8 +175,10 @@ body {
     border-right-width: 20px;
     position: relative;
     z-index: 2;
+    outline: none; /*уберем обводку*/
 }
-.default-btn:after {/*стрелочка*/
+
+.default-btn:after { /*стрелочка*/
     content: "\f105";
     font-family: 'icomoon';
     position: absolute;
@@ -181,10 +186,12 @@ body {
     transform: translateY(-50%);
     right: -12px;
 }
+
 .slider_inner {
     position: relative;
 }
-.slick-btn {/*слайдер стрелка*/
+
+.slick-btn { /*слайдер стрелка*/
     position: absolute;
     top: 70%;
     z-index: 3;
@@ -192,10 +199,135 @@ body {
     height: 40px;
     border: 1px solid #fff;
 
+    cursor: pointer; /*рука*/
+    outline: none; /*убрать синюю обводку*/
+    background-color: #ffc222;
 }
-.slick_next {
+
+.slick-btn.slick-disabled { /*когда конец слайдов*/
+    cursor: default;
+    background-color: transparent; /*прозрачная кнопка со стрелкой*/
+}
+
+.slick-btn:before { /*стрелочка*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+
+}
+
+.slick-next:before {
+    content: "\f105";
+}
+
+.slick-prev:before {
+    content: "\f104";
+}
+
+.slick-next { /*правая кнопка*/
     right: 0;
 }
-.slick_prev {
+
+.slick-prev { /*левая*/
     left: 0;
 }
+
+/*====================services*/
+
+.services {
+    padding: 50px 0px 30px;
+}
+.services_top {/*наши услуги*/
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+.services_title-box {
+    max-width: 520px;
+    padding-left: 140px;/*место под полоску*/
+    position: relative;
+
+}
+.services_title-box:before {/*полоска*/
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: #ffc222;
+    left: 0;
+    top: 11px;
+}
+.services-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212020;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+.services_text {
+    letter-spacing: 0.1px;
+
+}
+.services_btn a {/*показать все услуги*/
+    color: #373636;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    padding: 5px 38px;
+    border: 3px solid #e6e6e6;
+}
+.services_items {
+    display: flex;
+    justify-content: space-between;
+
+}
+.services_item {
+    max-width: 360px;
+    text-align: center;
+    padding: 30px 0px 80px;
+    position: relative;
+    min-height: 375px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
+}
+
+.services_item-title {
+    color: #212020;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 24px 0;
+}
+.services_item-text {
+    letter-spacing: 0.1px;/*между буквами*/
+    padding: 0px 30px 30px;
+
+
+}
+.services_item-btn {/*<!--ссылки-->*/
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+}
+
+.services_item-btn .default-btn {
+    color: #373636;
+}
+.services_item-btn .default-btn:after {
+    color: #fff;
+}
+.services_item-link /*подробнее*/{
+    color: #050505;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #050505;
+    margin-right: 60px;
+}
+
+/*====================ЭБАУТ*/
+
+
